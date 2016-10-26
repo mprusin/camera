@@ -1,3 +1,3 @@
 ﻿# camera
 
-# Projekt wizualizacji błędów na taśmie produkcyjnej.
+Projekt wizualizacji błędów na taśmie produkcyjnej.
