@@ -1,11 +1,11 @@
 function strzalka (par1){
 	//document.write(par1);
 	if (par1 == "down"){
-		return '<img src="image/\OK.gif" width="40" height="49" alt="Wzrost"//>';
+		return '<img src="image/\smile1.gif" width="50" height="59" alt="Better"//>';
 	} else if (par1 == "up") {
-		return '<img src="image/\bad.gif" width="40" height="49" alt="Spadek"//>';
-	} else {
-		return '<img src="image/\soso.gif" width="40" height="49" alt="Spadek"//>';
+		return '<img src="image/\OK1.gif" width="40" height="49" alt="OK"//>';
+	} else if (par1 == "-") {
+		return '<img src="image/\zly1.gif" width="40" height="49" alt="Worse"//>';
 	}
 }
 

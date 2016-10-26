@@ -39,6 +39,7 @@ table, td {
 	font-size: 50px;	
 	padding: 25px 5px;
 	border-collapse: collapse;
+	
 }
 
 th, td {
@@ -59,9 +60,10 @@ th {
 }
 		
 		td img {
-			width: 90px;		
-			height: 40px;
-			
+			width: 110px;	
+			height: 70px;
+			padding: 0px ;
+			filter: alpha(opacity=100);
 		}
 
 		.hidden {
@@ -74,4 +76,8 @@ th {
 
 .alarm_czerwony{
 	background-color: red;
+}
+td.trend {
+	/*width: 90px;		
+	height: 90px;*/
 }

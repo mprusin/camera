@@ -81,7 +81,7 @@ function odczytCam($nrCam){
 			if ($row >= $row_nag){
 				if ($row === $row_nag ) {
 					//echo $row."Nagłówek".$data[0]."<br />";
-					for ($i=0; $i <= count($data);$i++){
+					for ($i=0; $i <= count($data)-1;$i++){
 						//echo $data[$i]."<br />";
 						switch($data[$i]){
 							case 'JOB0.theResult.Inspected':
@@ -111,7 +111,9 @@ function odczytCam($nrCam){
 									
 				//if ($inspected >= $sztuki ){
 					$sztuki = $inspected;
-					$bledy = number_format((($class1*100)/$sztuki),2);
+					if ($sztuki >0){
+						$bledy = number_format((($class1*100)/$sztuki),2);
+					}
 					if ($bledy < $lastErr){
 						$strzalka = "down";
 					} elseif ($bledy == $lastErr){
@@ -122,14 +124,7 @@ function odczytCam($nrCam){
 					//echo $row."\t".$inspected."\t".$class0."\t".$class1." Było:". $lastErr. " jest ". $bledy ." ->".$strzalka. "<br />";
 					
 					$lastErr = $bledy;
-				//} elseif ($class0  === 0){
-					//echo $row.": ".$sztuki."\t",$bledy."<br />";
-					//echo $bledy ." poprzedni:". $lastErr;
-					/*if ($bledy <= $lastErr){
-						$strzalka = "down";
-					} else {
-						$strzalka = "up";
-					}*/
+				
 					if ($row === $row_max){
 						return array($data[0], substr($data[1],0,6),$sztuki, number_format($bledy,2), $strzalka);
 					}
@@ -137,7 +132,9 @@ function odczytCam($nrCam){
 					//exit();
 					//echo $strzalka;
 					$sztuki =$class0;
-					$bledy = number_format((($class1*100)/$sztuki),2);
+					if ($sztuki >0){
+						$bledy = number_format((($class1*100)/$sztuki),2);
+					}
 				//}
 				
 			}
